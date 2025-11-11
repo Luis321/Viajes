@@ -139,6 +139,17 @@
     color: #ff6b6b;
     margin-bottom: 8px;
   }
+  .airbnb-box {
+    background: #ffe8f5;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #ff385c;
+  }
+  .airbnb-box h4 {
+    color: #ff385c;
+    margin-bottom: 8px;
+  }
   .hotel-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -161,6 +172,10 @@
     border-color: #ff6b6b;
     background: #fff5f5;
   }
+  .hotel-card.airbnb {
+    border-color: #ff385c;
+    background: #fff8fa;
+  }
   .hotel-name {
     font-weight: bold;
     color: #2c3e50;
@@ -173,6 +188,9 @@
     font-weight: bold;
     margin: 8px 0;
   }
+  .hotel-card.airbnb .hotel-price {
+    color: #ff385c;
+  }
   .hotel-features {
     font-size: 0.9rem;
     color: #666;
@@ -181,6 +199,15 @@
   .pool-badge {
     display: inline-block;
     background: #4caf50;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    margin-top: 5px;
+  }
+  .airbnb-badge {
+    display: inline-block;
+    background: #ff385c;
     color: white;
     padding: 4px 10px;
     border-radius: 15px;
@@ -308,8 +335,8 @@
       <div class="budget-grid">
         <div class="budget-item">
           <div>🏨 Alojamiento</div>
-          <div class="amount">S/900</div>
-          <small>5 noches</small>
+          <div class="amount">S/600-900</div>
+          <small>5 noches (con Airbnb)</small>
         </div>
         <div class="budget-item">
           <div>🍽️ Comidas</div>
@@ -328,21 +355,36 @@
         </div>
       </div>
       <div class="cost-box">
-        <strong>💵 Total Estimado:</strong> S/3,150 - S/3,650<br>
+        <strong>💵 Total Estimado:</strong> S/2,850 - S/3,650<br>
         <strong>🎯 Tu Presupuesto:</strong> S/4,000<br>
-        <strong>✅ Margen:</strong> S/350 - S/850 para imprevistos
+        <strong>✅ Margen:</strong> S/350 - S/1,150 para imprevistos<br>
+        <small>💡 Con Airbnb ahorras S/300-600 vs hoteles tradicionales</small>
       </div>
     </div>
 
     <div class="card">
-      <h2>✨ Ventajas Itinerario Actualizado</h2>
-      <ul>
-        <li>🏔️ Aclimatación gradual y segura</li>
-        <li>💰 Ruta directa optimizada sin día extra</li>
-        <li>⛰️ Montaña 7 Colores al final (ya aclimatado)</li>
-        <li>🎯 6 días completos de experiencias</li>
-        <li>✈️ Horarios de vuelo perfectamente integrados</li>
-      </ul>
+      <h2>🏠 Guía Rápida Airbnb para Parejas en Cusco</h2>
+      <div class="airbnb-box">
+        <h4>✅ Criterios de Búsqueda Recomendados:</h4>
+        <ul>
+          <li><strong>Ubicación:</strong> Centro Histórico, San Blas, o a 10 min caminando de Plaza de Armas</li>
+          <li><strong>Calificación:</strong> Mínimo 4.8 estrellas con 15+ reseñas</li>
+          <li><strong>Precio:</strong> S/100-180 por noche (US$27-48)</li>
+          <li><strong>Esencial para parejas:</strong> Cama doble/queen, baño privado, agua caliente</li>
+          <li><strong>Seguridad:</strong> Superhost preferible, edificio con entrada segura</li>
+          <li><strong>Extras útiles:</strong> Calefacción (Cusco es FRÍO en diciembre), WiFi, cocina</li>
+        </ul>
+      </div>
+      
+      <div class="tip-box">
+        <strong>🔍 Filtros Airbnb que Debes Usar:</strong>
+        <ul>
+          <li>Tipo: "Apartamento entero" o "Habitación privada" (con baño privado)</li>
+          <li>Servicios: "Calefacción", "Agua caliente", "WiFi"</li>
+          <li>Ubicación: Busca por barrios: "Centro Histórico Cusco" o "San Blas Cusco"</li>
+          <li>Fechas: 15-20 dic (5 noches) - NO necesitas Airbnb el 17 (duermes en Aguas Calientes)</li>
+        </ul>
+      </div>
     </div>
 
     <div class="card">
@@ -352,7 +394,7 @@
       <p><strong>Día 3 (Mié 17):</strong> Cusco → Cocalmayo ♨️ → Aguas Calientes</p>
       <p><strong>Día 4 (Jue 18):</strong> Machu Picchu 🦙 + Regreso a Cusco</p>
       <p><strong>Día 5 (Vie 19):</strong> Montaña 7 Colores 🌈</p>
-      <p><strong>Día 6 (Sáb 20):</strong> Cusco libre + salida temprana (vuelo 16:37)</p>
+      <p><strong>Día 6 (Sáb 20):</strong> Cusco libre + salida (vuelo 16:37)</p>
     </div>
   </div>
 
@@ -363,74 +405,99 @@
       
       <div class="route-box">
         <strong>✈️ Vuelo:</strong> Lima → Cusco (14:15 - 15:41)<br>
-        <strong>📍 Tarde:</strong> Check-in hotel → Tarde libre en Plaza de Armas
+        <strong>📍 Tarde:</strong> Check-in → Tarde libre Plaza de Armas
       </div>
 
       <h3>⏰ Plan del Día</h3>
       <ul>
-        <li>15:41 - Llegada aeropuerto Cusco</li>
-        <li>16:00-16:30 - Taxi a hotel (S/15-25, 20 min)</li>
+        <li>15:41 - Llegada aeropuerto</li>
+        <li>16:00-16:30 - Taxi a alojamiento</li>
         <li>16:30-18:00 - Check-in, descanso, mate de coca</li>
-        <li>18:00-20:00 - Caminata suave: Plaza de Armas, San Blas</li>
+        <li>18:00-20:00 - Caminata suave: Plaza de Armas</li>
         <li>20:00 - Cena ligera y descanso</li>
       </ul>
 
       <div class="hack-box">
-        <h4>🔥 HACKS DÍA 1 (Llegada Tarde)</h4>
+        <h4>🔥 HACKS DÍA 1</h4>
         <ul>
-          <li><strong>Taxi aeropuerto:</strong> Apps como Uber/Cabify o taxi autorizado (S/20-25). NO aceptes taxis informales</li>
-          <li><strong>Té de coca INMEDIATO:</strong> Apenas llegues al hotel, pide mate de coca. Es gratis en la mayoría de hoteles</li>
-          <li><strong>NO te apresures:</strong> Con llegada a las 15:41, tienes solo tarde. Camina LENTO, tu cuerpo está adaptándose</li>
-          <li><strong>Cena ligera:</strong> Restaurante Pachapapa (San Blas) tiene buena comida a precios razonables</li>
-          <li><strong>Compra mañana:</strong> Si tienes energía, ve a una farmacia y compra Soroche Pills (mal de altura) por si acaso</li>
-          <li><strong>Duerme temprano:</strong> Mañana sale el tour del Valle a las 7:00 am</li>
+          <li><strong>Taxi aeropuerto:</strong> Uber/Cabify o taxi autorizado (S/20-25)</li>
+          <li><strong>Té de coca inmediato:</strong> Pide apenas llegues</li>
+          <li><strong>Camina LENTO:</strong> Tu cuerpo está adaptándose a 3,400 msnm</li>
+          <li><strong>Check-in temprano:</strong> Muchos Airbnbs permiten check-in desde las 14:00, pregunta a tu host</li>
         </ul>
       </div>
 
-      <h3>🏨 Hospedajes Cusco (5 noches: 15, 16, 18, 19, 20)</h3>
+      <h3>🏨 Opciones Hospedaje Cusco (Noches: 15, 16, 18, 19)</h3>
+      
+      <div class="airbnb-box">
+        <h4>🏠 AIRBNB RECOMENDADOS - CUSCO CENTRO</h4>
+        <p><strong>Buscar en Airbnb:</strong> "Cusco Centro" o "San Blas" - Fechas: 15-16 dic y 18-20 dic (4 noches)</p>
+      </div>
+
       <div class="hotel-grid">
-        <div class="hotel-card">
-          <div class="hotel-name">🏠 Hostal Warari</div>
-          <div class="hotel-price">S/120-150</div>
-          <div class="hotel-features">⭐ Cerca Plaza<br>📶 WiFi<br>☕ Desayuno</div>
+        <div class="hotel-card airbnb">
+          <div class="hotel-name">🏠 Tipo: Departamento Entero Centro</div>
+          <div class="hotel-price">S/100-140/noche</div>
+          <div class="hotel-features">
+            📍 A 5-10 min de Plaza de Armas<br>
+            🛏️ Cama queen, baño privado<br>
+            🔥 Calefacción + agua caliente<br>
+            📶 WiFi, cocina equipada<br>
+            ⭐ Buscar: 4.8+ estrellas, Superhost
+          </div>
+          <span class="airbnb-badge">💰 Económico</span>
         </div>
-        <div class="hotel-card featured">
-          <div class="hotel-name">🏠 Tierra Viva Centro</div>
-          <div class="hotel-price">S/280-350</div>
-          <div class="hotel-features">⭐⭐⭐ Céntrico<br>🍳 Desayuno<br>🛁 Confort</div>
-          <span class="pool-badge">⭐ Recomendado</span>
+
+        <div class="hotel-card airbnb featured">
+          <div class="hotel-name">🏠 Tipo: Loft San Blas con Vista</div>
+          <div class="hotel-price">S/150-200/noche</div>
+          <div class="hotel-features">
+            📍 Barrio San Blas (bohemio)<br>
+            🛏️ Cama king, baño moderno<br>
+            🪟 Balcón con vista a Cusco<br>
+            🔥 Calefacción, sala con chimenea<br>
+            🍳 Cocina completa, Netflix<br>
+            ⭐ Buscar: Superhost, 15+ reseñas
+          </div>
+          <span class="airbnb-badge">⭐ MEJOR OPCIÓN</span>
         </div>
-        <div class="hotel-card featured">
-          <div class="hotel-name">🏊 Costa del Sol Ramada</div>
-          <div class="hotel-price">S/350-400</div>
-          <div class="hotel-features">⭐⭐⭐⭐ Lujo<br>🏊 Piscina temperada<br>💆 Spa</div>
-          <span class="pool-badge">🏊 CON PISCINA</span>
+
+        <div class="hotel-card airbnb">
+          <div class="hotel-name">🏠 Tipo: Habitación Privada Casa Colonial</div>
+          <div class="hotel-price">S/80-120/noche</div>
+          <div class="hotel-features">
+            📍 Centro Histórico<br>
+            🛏️ Habitación privada + baño privado<br>
+            🏛️ Casa colonial restaurada<br>
+            👥 Anfitrión local (tips de viaje)<br>
+            ☕ Desayuno incluido (algunos)<br>
+            ⭐ Buscar: "Casa colonial" + "baño privado"
+          </div>
+          <span class="airbnb-badge">🤝 Experiencia Local</span>
         </div>
       </div>
 
-      <h3>🗺️ Mapa Aeropuerto - Hotel - Centro</h3>
-      <div class="map-container" id="map1"></div>
-      <div style="text-align: center;">
-        <a href="https://www.google.com/maps/dir/Aeropuerto+Cusco/Plaza+de+Armas,+Cusco/@-13.52,-71.97,13z" target="_blank" class="map-link">🗺️ Ver ruta en Google Maps</a>
+      <div class="tip-box">
+        <strong>💡 Tips para Reservar Airbnb en Cusco:</strong>
+        <ul>
+          <li><strong>Pregunta al host:</strong> "¿Hay calefacción?" - Cusco es MUY frío de noche en diciembre</li>
+          <li><strong>Confirmación presión agua:</strong> "¿El agua caliente es confiable?" - Problema común en Cusco</li>
+          <li><strong>Ubicación exacta:</strong> Pide dirección exacta antes de reservar. Cusco tiene calles empinadas</li>
+          <li><strong>Check-in flexible:</strong> Explica tu hora de llegada (15:41). Muchos hosts son flexibles</li>
+          <li><strong>Lee reseñas:</strong> Busca comentarios sobre "agua caliente", "calefacción", "ubicación"</li>
+        </ul>
       </div>
+
+      <h3>🗺️ Mapa Aeropuerto - Centro</h3>
+      <div class="map-container" id="map1"></div>
 
       <div class="cost-box">
         <strong>💵 Costo Día 1 (2 personas):</strong>
         <ul>
-          <li>Taxi aeropuerto-hotel: S/20-25</li>
-          <li>Alojamiento: S/150-400</li>
-          <li>Cena ligera: S/60-100</li>
-          <li><strong>Total: S/230-525</strong></li>
-        </ul>
-      </div>
-
-      <div class="tip-box">
-        <strong>💡 Tips Cruciales Día 1:</strong>
-        <ul>
-          <li>Bebe 3-4 litros de agua</li>
-          <li>NO consumas alcohol</li>
-          <li>Camina MUY lento</li>
-          <li>Si sientes mareo/dolor cabeza fuerte → es normal, descansa</li>
+          <li>Taxi aeropuerto: S/20-25</li>
+          <li>Airbnb (1 noche): S/100-200</li>
+          <li>Cena: S/60-100</li>
+          <li><strong>Total: S/180-325</strong></li>
         </ul>
       </div>
     </div>
@@ -447,46 +514,33 @@
 
       <h3>🚌 Tour Full Day</h3>
       <ul>
-        <li>7:00 am - Recojo en hotel</li>
-        <li>Visitas: Pisac, Urubamba, Ollantaytambo, Chinchero</li>
-        <li>19:00-20:00 - Regreso a Cusco</li>
+        <li>7:00 am - Recojo en Airbnb/hotel</li>
+        <li>19:00-20:00 - Regreso</li>
       </ul>
 
       <div class="hack-box">
-        <h4>🔥 HACKS VALLE SAGRADO 2025</h4>
+        <h4>🔥 HACKS VALLE SAGRADO</h4>
         <ul>
-          <li><strong>Desayuno antes:</strong> Tour no incluye desayuno, come algo antes de las 7 am</li>
-          <li><strong>Mercado Pisac:</strong> Martes hay mercado completo con artesanos locales</li>
-          <li><strong>Almuerzo Urubamba:</strong> Incluido en tour, usualmente buffet. Come moderado por la altura</li>
-          <li><strong>Ollantaytambo foto perfecta:</strong> Sube las ruinas hasta arriba, vista 360° espectacular (16:00 mejor luz)</li>
-          <li><strong>Compra aquí:</strong> Textiles en Chinchero son más baratos y auténticos que en Cusco</li>
+          <li><strong>Recojo en Airbnb:</strong> Confirma dirección exacta con la agencia de tour 1 día antes</li>
+          <li><strong>Desayuno express:</strong> Si tu Airbnb tiene cocina, prepara algo rápido antes de las 7 am</li>
+          <li><strong>Ollantaytambo 16:00:</strong> Mejor luz para fotos</li>
         </ul>
       </div>
+
+      <h3>🏠 Segunda Noche Mismo Airbnb Cusco</h3>
+      <p>Regresas al mismo alojamiento de ayer. Asegúrate de reservar para 2 noches consecutivas (15-16 dic).</p>
 
       <h3>🗺️ Mapa Valle Sagrado</h3>
       <div class="map-container" id="map2"></div>
-      <div style="text-align: center;">
-        <a href="https://www.google.com/maps/dir/Cusco/Pisac/Urubamba/Ollantaytambo/Chinchero/Cusco/@-13.35,-72.04,10z" target="_blank" class="map-link">🗺️ Ver ruta en Google Maps</a>
-      </div>
 
       <div class="cost-box">
-        <strong>💵 Costo Día 2 (2 personas):</strong>
+        <strong>💵 Costo Día 2:</strong>
         <ul>
           <li>Tour: S/160-300</li>
-          <li>Entradas (Boleto Turístico): S/140</li>
-          <li>Alojamiento Cusco: S/150-400</li>
-          <li>Snacks/cena: S/60-100</li>
-          <li><strong>Total: S/510-940</strong></li>
-        </ul>
-      </div>
-
-      <div class="tip-box">
-        <strong>💡 Tips Valle Sagrado:</strong>
-        <ul>
-          <li>Valle a 2,800 msnm (mejor que Cusco para aclimatación)</li>
-          <li>Bloqueador SPF 50+</li>
-          <li>Lleva efectivo para compras</li>
-          <li>Botella de agua reutilizable</li>
+          <li>Entradas: S/140</li>
+          <li>Airbnb (2da noche): S/100-200</li>
+          <li>Extras: S/60-100</li>
+          <li><strong>Total: S/460-740</strong></li>
         </ul>
       </div>
     </div>
@@ -501,69 +555,58 @@
         <strong>📍 Ruta:</strong> Cusco → Santa Teresa → Cocalmayo → Hidroeléctrica → Aguas Calientes
       </div>
 
-      <h3>🚐 Itinerario del Día</h3>
+      <h3>🚐 Itinerario</h3>
       <ul>
-        <li>5:00-6:00 am - Van sale de Cusco</li>
-        <li>11:00-12:00 - Llegada Santa Teresa</li>
-        <li>12:30-16:00 - Termas Cocalmayo ♨️</li>
-        <li>16:30-17:30 - Colectivo a Hidroeléctrica</li>
-        <li>17:30-20:00 - Caminata a Aguas Calientes (2.5h)</li>
-        <li>20:00 - Check-in hotel Aguas Calientes</li>
+        <li>5:00-6:00 am - Van desde Cusco</li>
+        <li>12:30-16:00 - Cocalmayo</li>
+        <li>17:30-20:00 - Caminata a Aguas Calientes</li>
       </ul>
 
       <div class="hack-box">
-        <h4>🔥 HACKS DÍA COMBINADO</h4>
+        <h4>🔥 HACK IMPORTANTE - EQUIPAJE</h4>
         <ul>
-          <li><strong>Van directa:</strong> Reserva van que vaya directo a Santa Teresa (no la que para en Ollantaytambo)</li>
-          <li><strong>Horario Cocalmayo:</strong> 12:00-16:00 perfecto. 4 piscinas (38°C-44°C), empieza por más fría</li>
-          <li><strong>Mochila ligera:</strong> Deja equipaje grande en hotel Cusco, lleva solo necesario para 1 noche</li>
-          <li><strong>Snacks Hidroeléctrica:</strong> Compra agua/snacks AQUÍ antes de caminar. En Aguas Calientes es 3x más caro</li>
-          <li><strong>Caminata nocturna:</strong> Llegas de noche pero el camino tiene luces y es seguro. Lleva linterna de celular por si acaso</li>
-          <li><strong>Compra bus MP HOY:</strong> Apenas llegues a Aguas Calientes, compra ticket bus para mañana (S/48 pp ida/vuelta)</li>
+          <li><strong>Deja equipaje en Airbnb Cusco:</strong> Habla con tu host para dejar maletas grandes. Solo lleva mochila para 1 noche</li>
+          <li><strong>Qué llevar:</strong> Ropa 1 día, traje baño, toalla, artículos personales</li>
+          <li><strong>Check-out parcial:</strong> Algunos hosts Airbnb te dejan guardar maletas gratis mientras viajas</li>
         </ul>
       </div>
 
-      <h3>🏨 Hospedaje Aguas Calientes (1 noche: 17)</h3>
+      <h3>🏨 Hospedaje Aguas Calientes (1 noche: 17 dic)</h3>
+      
+      <div class="airbnb-box">
+        <h4>🏠 AIRBNB EN AGUAS CALIENTES</h4>
+        <p><strong>⚠️ IMPORTANTE:</strong> Airbnb en Aguas Calientes tiene MENOS opciones y precios similares a hoteles. Te recomiendo HOTEL esta noche por:</p>
+        <ul>
+          <li>✅ Check-in tardío garantizado (llegas 20:00)</li>
+          <li>✅ Desayuno 5:00 am incluido (crucial para Machu Picchu)</li>
+          <li>✅ Más confiable para madrugada</li>
+        </ul>
+      </div>
+
       <div class="hotel-grid">
         <div class="hotel-card">
           <div class="hotel-name">🏠 Hostal Pirwa</div>
           <div class="hotel-price">S/150-180</div>
-          <div class="hotel-features">⭐ Cerca estación<br>📶 WiFi<br>☕ Desayuno temprano</div>
+          <div class="hotel-features">⭐ Cerca estación<br>☕ Desayuno 5am<br>🚿 Agua caliente</div>
         </div>
         <div class="hotel-card featured">
           <div class="hotel-name">🏠 Inti Punku Hotel</div>
           <div class="hotel-price">S/220-280</div>
-          <div class="hotel-features">⭐⭐ Vista río<br>🍳 Desayuno 5am<br>🌡️ Agua caliente</div>
+          <div class="hotel-features">⭐⭐ Vista río<br>🍳 Desayuno temprano<br>📍 Céntrico</div>
           <span class="pool-badge">⭐ Recomendado MP</span>
         </div>
       </div>
 
-      <h3>🗺️ Mapa Ruta Completa Día 3</h3>
+      <h3>🗺️ Mapa Ruta Día 3</h3>
       <div class="map-container" id="map3"></div>
-      <div style="text-align: center;">
-        <a href="https://www.google.com/maps/dir/Cusco/Santa+Teresa/Aguas+Calientes/@-13.3,-72.4,10z" target="_blank" class="map-link">🗺️ Ver ruta en Google Maps</a>
-      </div>
 
       <div class="cost-box">
-        <strong>💵 Costo Día 3 (2 personas):</strong>
+        <strong>💵 Costo Día 3:</strong>
         <ul>
-          <li>Van Cusco-Santa Teresa: S/120-160</li>
-          <li>Mototaxi + entrada Cocalmayo: S/40</li>
-          <li>Colectivo a Hidroeléctrica: S/20-40</li>
-          <li>Caminata: S/0 ✨</li>
-          <li>Alojamiento Aguas Calientes: S/150-280</li>
+          <li>Van + Cocalmayo: S/160-200</li>
+          <li>Hotel Aguas Calientes: S/150-280</li>
           <li>Comidas: S/100-150</li>
-          <li><strong>Total: S/430-670</strong></li>
-        </ul>
-      </div>
-
-      <div class="tip-box">
-        <strong>💡 Tips Día Largo:</strong>
-        <ul>
-          <li>Sale muy temprano (5-6 am), duerme bien antes</li>
-          <li>Lleva: traje baño, toalla, ropa cómoda para caminar</li>
-          <li>Cocalmayo: repelente mosquitos + bloqueador</li>
-          <li>Caminata: plana, fácil, 10km por vías del tren</li>
+          <li><strong>Total: S/410-630</strong></li>
         </ul>
       </div>
     </div>
@@ -575,61 +618,50 @@
       <h2><span class="day-number">4</span>Jueves 18 - MACHU PICCHU 🦙</h2>
       
       <div class="route-box">
-        <strong>📍 Ruta:</strong> Aguas Calientes → Machu Picchu → Hidroeléctrica → Cusco
+        <strong>📍 Ruta:</strong> Aguas Calientes → Machu Picchu → Cusco
       </div>
 
-      <h3>🎫 Programa Machu Picchu</h3>
+      <h3>🎫 Programa</h3>
       <ul>
-        <li>5:00 am - Despertar y desayuno express</li>
-        <li>5:30 am - Bus a Machu Picchu (25 min)</li>
-        <li>6:00-10:30 am - Visita Machu Picchu (Circuito 2-A)</li>
-        <li>11:00 am - Bus/caminar bajada a Aguas Calientes</li>
-        <li>12:00-13:00 - Almuerzo Aguas Calientes</li>
-        <li>13:30-16:00 - Caminata Aguas Calientes → Hidroeléctrica</li>
+        <li>5:00 am - Despertar</li>
+        <li>5:30 am - Bus a Machu Picchu</li>
+        <li>6:00-10:30 am - Visita</li>
         <li>16:30 - Van Hidroeléctrica → Cusco</li>
-        <li>22:00-23:00 - Llegada Cusco</li>
+        <li>22:00 - Llegada Cusco</li>
       </ul>
 
       <div class="hack-box">
-        <h4>🔥 HACKS MACHU PICCHU 2025</h4>
+        <h4>🔥 HACKS MACHU PICCHU</h4>
         <ul>
-          <li><strong>5:30 am es CLAVE:</strong> Primer bus. A las 8 am ya hay multitudes. Foto clásica solo sale sin gente a las 6-7 am</li>
-          <li><strong>Circuito 2-A = perfecto:</strong> Foto desde terrazas + caminar por ciudadela. Los otros circuitos NO tienen ambas</li>
-          <li><strong>Casa del Guardián primero:</strong> Ve DIRECTO ahí apenas entres. Es el lugar de la foto icónica</li>
-          <li><strong>Baño antes:</strong> NO hay baños dentro. Si sales, no puedes volver a entrar</li>
-          <li><strong>Ahorro bus bajada:</strong> Baja caminando (1.5h gratis) para ahorrar S/24 pp. Es pura bajada por escaleras</li>
-          <li><strong>Entrada S/64 pp:</strong> Compra en línea con anticipación en machupicchu.gob.pe</li>
-          <li><strong>Pasaporte = sello:</strong> Llévalo para sello gratis a la salida</li>
-          <li><strong>Día largo:</strong> Llegas a Cusco 22:00-23:00. Come algo en el camino</li>
+          <li><strong>5:30 am es CLAVE:</strong> Primer bus = foto sin gente</li>
+          <li><strong>Circuito 2-A:</strong> Único con foto clásica + ciudadela</li>
+          <li><strong>Casa del Guardián primero:</strong> Ve directo ahí</li>
+        </ul>
+      </div>
+
+      <h3>🏠 Regreso a Airbnb Cusco (3ra noche)</h3>
+      <p>Regresas a tu Airbnb en Cusco donde dejaste las maletas. Reserva nuevamente para las noches 18 y 19 (2 noches más).</p>
+      
+      <div class="tip-box">
+        <strong>💡 Tip Airbnb Multi-noche:</strong>
+        <ul>
+          <li>Opción A: Reserva todo junto (15-16 y 18-19 dic) y explica al host que no estarás el 17</li>
+          <li>Opción B: Haz 2 reservas separadas y negocia descuento por 4 noches totales</li>
+          <li>Muchos hosts Airbnb te dejan guardar maletas gratis entre reservas</li>
         </ul>
       </div>
 
       <h3>🗺️ Mapa Machu Picchu</h3>
       <div class="map-container" id="map4"></div>
-      <div style="text-align: center;">
-        <a href="https://www.google.com/maps/place/Machu+Picchu/@-13.1631,-72.5450,15z" target="_blank" class="map-link">🗺️ Ver en Google Maps</a>
-      </div>
 
       <div class="cost-box">
-        <strong>💵 Costo Día 4 (2 personas):</strong>
+        <strong>💵 Costo Día 4:</strong>
         <ul>
-          <li>Entradas Machu Picchu: S/128</li>
-          <li>Bus ida/vuelta: S/96</li>
-          <li>Almuerzo Aguas Calientes: S/80-120</li>
-          <li>Van Hidroeléctrica-Cusco: S/120-160</li>
-          <li>Alojamiento Cusco: S/150-400</li>
-          <li>Snacks: S/40-60</li>
-          <li><strong>Total: S/614-964</strong></li>
-        </ul>
-      </div>
-
-      <div class="tip-box">
-        <strong>💡 Qué Llevar a Machu Picchu:</strong>
-        <ul>
-          <li>✅ Mochila pequeña, agua 1L, snacks, poncho, gorra, bloqueador, cámara</li>
-          <li>❌ Paraguas, bastones sin punta goma, mochilas +40L, trípodes</li>
-          <li>Pasaporte original (obligatorio para entrar)</li>
-          <li>Efectivo para baños (S/2) y souvenirs</li>
+          <li>Entradas MP + Bus: S/224</li>
+          <li>Van a Cusco: S/120-160</li>
+          <li>Airbnb Cusco (3ra noche): S/100-200</li>
+          <li>Comidas: S/120-180</li>
+          <li><strong>Total: S/564-764</strong></li>
         </ul>
       </div>
     </div>
@@ -641,60 +673,39 @@
       <h2><span class="day-number">5</span>Viernes 19 - Montaña 7 Colores 🌈</h2>
       
       <div class="route-box">
-        <strong>📍 Ruta:</strong> Cusco → Cusipata → Phulawasipata → Vinicunca (5,200 msnm)
+        <strong>📍 Ruta:</strong> Cusco → Vinicunca → Cusco
       </div>
 
       <h3>🚐 Tour Full Day</h3>
       <ul>
-        <li>4:00 am - Recojo en hotel</li>
-        <li>7:00-7:30 am - Desayuno en ruta</li>
-        <li>8:00 am - Inicio trek desde parking</li>
-        <li>9:30-10:00 am - Cumbre Vinicunca</li>
-        <li>10:30-11:30 am - Fotos y regreso</li>
-        <li>13:00 - Almuerzo incluido</li>
-        <li>16:00-17:00 - Llegada Cusco</li>
+        <li>4:00 am - Recojo en Airbnb</li>
+        <li>9:30 am - Cumbre Vinicunca</li>
+        <li>16:00-17:00 - Regreso Cusco</li>
       </ul>
 
       <div class="hack-box">
-        <h4>🔥 HACKS VINICUNCA 2025</h4>
+        <h4>🔥 HACKS VINICUNCA</h4>
         <ul>
-          <li><strong>¡Súper aclimatado!</strong> Ya llevas 4 días en altura. Los 5,200m serán más manejables ahora</li>
-          <li><strong>Ruta Cusipata:</strong> Asegúrate que tu tour sea por Cusipata (corta). Pitumarca es 6h = tortura</li>
-          <li><strong>Hora perfecta fotos:</strong> 9:00-10:00 am. Sol perfecto, colores vibrantes. Después nubla</li>
-          <li><strong>Caballo S/50:</strong> Solo si lo necesitas. Con buen estado físico no hace falta</li>
-          <li><strong>Truco foto:</strong> Foto clásica desde mirador. Para MEJOR ángulo: camina 20m a la derecha</li>
-          <li><strong>Red Valley +30min:</strong> Si tienes energía, vale la pena. Paisaje marciano, casi sin turistas</li>
-          <li><strong>Sistema capas:</strong> NO te quites chaqueta aunque tengas calor. Viento helado te enferma rápido</li>
-          <li><strong>Ritmo:</strong> Para cada 10-15 min a respirar. Camina LENTO</li>
+          <li><strong>Recojo 4 am:</strong> Confirma dirección exacta de tu Airbnb con agencia</li>
+          <li><strong>Ya aclimatado:</strong> 5,200m serán manejables</li>
+          <li><strong>Ruta Cusipata:</strong> Más corta (1.5h vs 6h)</li>
+          <li><strong>9:00-10:00 am:</strong> Mejor luz para fotos</li>
         </ul>
       </div>
 
-      <h3>🗺️ Mapa Cusco - Vinicunca</h3>
+      <h3>🏠 Cuarta Noche Mismo Airbnb</h3>
+      <p>Última noche en tu Airbnb de Cusco. Aprovecha si tiene cocina para cena relajada después del trek.</p>
+
+      <h3>🗺️ Mapa Vinicunca</h3>
       <div class="map-container" id="map5"></div>
-      <div style="text-align: center;">
-        <a href="https://www.google.com/maps/dir/Cusco/Vinicunca/@-13.7,-71.6,10z" target="_blank" class="map-link">🗺️ Ver ruta en Google Maps</a>
-      </div>
 
       <div class="cost-box">
-        <strong>💵 Costo Día 5 (2 personas):</strong>
+        <strong>💵 Costo Día 5:</strong>
         <ul>
-          <li>Tour con comidas: S/300</li>
-          <li>Entradas: S/50</li>
-          <li>Caballo (opcional): S/100</li>
-          <li>Alojamiento Cusco: S/150-400</li>
+          <li>Tour + entradas: S/350</li>
+          <li>Airbnb (4ta noche): S/100-200</li>
           <li>Cena: S/50-80</li>
-          <li><strong>Total: S/550-930</strong></li>
-        </ul>
-      </div>
-
-      <div class="tip-box">
-        <strong>💡 Tips Esenciales Vinicunca:</strong>
-        <ul>
-          <li><strong>ROPA:</strong> Capas (frío mañana, calor mediodía). Chaqueta cortaviento, polar, gorra, guantes</li>
-          <li><strong>Protección:</strong> SPF 50+, labial protector. Sol quema brutal a 5,200m</li>
-          <li><strong>Hidratación:</strong> 2-3 litros de agua</li>
-          <li><strong>Snacks energéticos:</strong> Chocolate, frutos secos, caramelos coca</li>
-          <li><strong>Piscina después:</strong> Si tu hotel tiene, úsala. Tu cuerpo lo agradecerá</li>
+          <li><strong>Total: S/500-630</strong></li>
         </ul>
       </div>
     </div>
@@ -703,63 +714,95 @@
   <!-- DÍA 6 -->
   <div class="content">
     <div class="card">
-      <h2><span class="day-number">6</span>Sábado 20 - Cusco Libre + Preparación Salida</h2>
+      <h2><span class="day-number">6</span>Sábado 20 - Último Día + Vuelo</h2>
       
       <div class="route-box">
-        <strong>📍 Mañana:</strong> Compras y última visita<br>
-        <strong>✈️ Tarde:</strong> Salir hotel 14:00 → Aeropuerto → Vuelo 16:37
+        <strong>📍 Mañana:</strong> Compras<br>
+        <strong>✈️ Tarde:</strong> Vuelo 16:37
       </div>
 
-      <h3>🛍️ Plan del Día</h3>
+      <h3>🛍️ Plan</h3>
       <ul>
-        <li>9:00-12:00 - Mercado San Pedro + compras souvenirs</li>
-        <li>12:00-13:30 - Almuerzo + últimas fotos Plaza de Armas</li>
-        <li>14:00 - Check-out y taxi al aeropuerto</li>
-        <li>14:30-15:00 - Llegada aeropuerto (2h antes vuelo)</li>
-        <li>16:37 - Vuelo CUZ → LIM</li>
-        <li>18:10 - Llegada Lima</li>
+        <li>9:00-12:00 - Mercado San Pedro + compras</li>
+        <li>12:00-13:30 - Almuerzo + fotos</li>
+        <li>14:00 - Check-out Airbnb + taxi aeropuerto</li>
+        <li>14:30 - Aeropuerto</li>
+        <li>16:37 - Vuelo a Lima</li>
       </ul>
 
       <div class="hack-box">
         <h4>🔥 HACKS ÚLTIMO DÍA</h4>
         <ul>
-          <li><strong>Check-out 14:00 máximo:</strong> Tu vuelo es 16:37, necesitas llegar al aeropuerto 14:30-15:00</li>
-          <li><strong>Souvenirs baratos:</strong> Mercado San Pedro tiene mejores precios. Textiles alpaca: S/80-150 vs S/300 en tiendas turísticas</li>
-          <li><strong>Test alpaca real:</strong> Quema un hilo. Si huele a plástico = acrílico. Alpaca real huele a pelo quemado</li>
-          <li><strong>Regatea:</strong> Pide 40% menos del precio inicial. Terminas en 20-30% descuento</li>
-          <li><strong>Compras imperdibles:</strong> Chocolate Orquídea, café Tunki, textiles alpaca, cerámica Quinua</li>
-          <li><strong>Última comida:</strong> Almuerzo en Cicciolina o Chicha (Gastón Acurio) para celebrar</li>
-          <li><strong>Taxi aeropuerto:</strong> Pide al hotel que te llame uno. Más seguro que agarrar en calle</li>
-        </ul>
-      </div>
-
-      <h3>🗺️ Mapa San Blas - Mercados - Aeropuerto</h3>
-      <div class="map-container" id="map6"></div>
-      <div style="text-align: center;">
-        <a href="https://www.google.com/maps/dir/Plaza+de+Armas+Cusco/Mercado+San+Pedro/Aeropuerto+Cusco/@-13.52,-71.97,13z" target="_blank" class="map-link">🗺️ Ver ruta en Google Maps</a>
-      </div>
-
-      <div class="cost-box">
-        <strong>💵 Costo Día 6 (2 personas):</strong>
-        <ul>
-          <li>Desayuno hotel: incluido</li>
-          <li>Souvenirs: S/150-300</li>
-          <li>Almuerzo especial: S/120-180</li>
-          <li>Taxi aeropuerto: S/20-25</li>
-          <li><strong>Total: S/290-505</strong></li>
+          <li><strong>Check-out Airbnb:</strong> Mayoría permite hasta 11:00-12:00. Si necesitas más tiempo, pregunta al host</li>
+          <li><strong>Guarda maletas:</strong> Si tu vuelo es tarde, host puede dejarte dejar maletas y explorar sin equipaje</li>
+          <li><strong>Limpieza básica:</strong> Deja el Airbnb ordenado = buenas reseñas mutuas</li>
+          <li><strong>Souvenirs Mercado San Pedro:</strong> S/80-150 textiles alpaca auténticos</li>
         </ul>
       </div>
 
       <div class="tip-box">
-        <strong>💡 Tips Último Día:</strong>
+        <strong>💡 Despedida del Airbnb:</strong>
         <ul>
-          <li>Deja espacio en maleta para recuerdos</li>
-          <li>Guarda soles para taxi y propinas finales</li>
-          <li>Llega aeropuerto 2h antes mínimo</li>
-          <li>Verifica documentos: DNI/pasaporte, boletos</li>
-          <li>Lleva algo de comida para el vuelo (snacks)</li>
+          <li>Deja mensaje agradecimiento al host</li>
+          <li>Toma foto del estado del lugar al salir (precaución)</li>
+          <li>Deja propina si hubo servicio excepcional (opcional)</li>
+          <li>Escribe reseña positiva (ayuda a futuros viajeros)</li>
         </ul>
       </div>
+
+      <h3>🗺️ Mapa Último Día</h3>
+      <div class="map-container" id="map6"></div>
+
+      <div class="cost-box">
+        <strong>💵 Costo Día 6:</strong>
+        <ul>
+          <li>Souvenirs: S/150-300</li>
+          <li>Almuerzo: S/120-180</li>
+          <li>Taxi aeropuerto: S/20-25</li>
+          <li><strong>Total: S/290-505</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUMEN AIRBNB -->
+  <div class="card" style="background: #fff8fa; border: 3px solid #ff385c;">
+    <h2 style="color: #ff385c;">🏠 Resumen: Estrategia Airbnb para tu Viaje</h2>
+    
+    <h3>📅 Necesitas Airbnb para:</h3>
+    <ul>
+      <li><strong>4 noches en Cusco:</strong> 15-16 dic y 18-19 dic</li>
+      <li><strong>1 noche en Aguas Calientes:</strong> 17 dic (mejor hotel por logística)</li>
+    </ul>
+
+    <h3>💰 Ahorro Estimado con Airbnb:</h3>
+    <div class="cost-box">
+      <strong>Comparativa 4 noches Cusco:</strong><br>
+      🏨 Hoteles: S/600-1,200 (S/150-300/noche)<br>
+      🏠 Airbnb: S/400-800 (S/100-200/noche)<br>
+      <strong>✅ Ahorro: S/200-400</strong>
+    </div>
+
+    <h3>🔑 Palabras Clave para Buscar en Airbnb:</h3>
+    <ul>
+      <li>"Cusco Centro" + "Pareja" + "Calefacción"</li>
+      <li>"San Blas Cusco" + "Cama queen" + "Baño privado"</li>
+      <li>"Centro Histórico Cusco" + "Vista" + "Acogedor"</li>
+      <li>Filtros: Superhost + 4.8★ + Apartment/Private room</li>
+    </ul>
+
+    <h3>⚠️ Red Flags a Evitar:</h3>
+    <ul>
+      <li>❌ Menos de 4.5 estrellas</li>
+      <li>❌ Menos de 5 reseñas</li>
+      <li>❌ Quejas sobre "agua fría" o "sin calefacción"</li>
+      <li>❌ Ubicación muy alejada del centro (15+ min caminando)</li>
+      <li>❌ Host que no responde mensajes rápido</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>💬 Mensaje Template para el Host:</strong>
+      <p><em>"Hola, somos una pareja que visitará Cusco del 15-16 y 18-19 de diciembre. ¿Es posible hacer una reserva para estas 4 noches? ¿Podemos dejar nuestras maletas el día 17 mientras visitamos Machu Picchu? ¿El agua caliente y la calefacción funcionan bien? Gracias!"</em></p>
     </div>
   </div>
 </div>
@@ -809,16 +852,13 @@ function showTab(index) {
           {pos: [-13.5164, -71.9784], label: '🏛️ Cusco'},
           {pos: [-13.4211, -71.8475], label: '🏺 Pisac'},
           {pos: [-13.305, -72.1165], label: '🌾 Urubamba'},
-          {pos: [-13.2585, -72.2638], label: '⛰️ Ollantaytambo'},
-          {pos: [-13.3925, -72.0497], label: '🎨 Chinchero'}
+          {pos: [-13.2585, -72.2638], label: '⛰️ Ollantaytambo'}
         ]);
         break;
       case 3:
         initMap('map3', [-13.30, -72.30], 9, [
           {pos: [-13.5164, -71.9784], label: '🏛️ Cusco'},
           {pos: [-13.1286, -72.5989], label: '🏘️ Santa Teresa'},
-          {pos: [-13.1367, -72.5867], label: '♨️ Cocalmayo'},
-          {pos: [-13.1667, -72.5667], label: '⚡ Hidroeléctrica'},
           {pos: [-13.1546, -72.5249], label: '🏘️ Aguas Calientes'}
         ]);
         break;
@@ -837,7 +877,7 @@ function showTab(index) {
       case 6:
         initMap('map6', [-13.52, -71.97], 13, [
           {pos: [-13.5164, -71.9784], label: '🏛️ Plaza de Armas'},
-          {pos: [-13.5213, -71.9698], label: '🛍️ Mercado San Pedro'},
+          {pos: [-13.5213, -71.9698], label: '🛍️ Mercado'},
           {pos: [-13.5357, -71.9387], label: '✈️ Aeropuerto'}
         ]);
         break;
